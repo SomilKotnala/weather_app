@@ -35,22 +35,26 @@ async function checkWeather(city) {
     wind_speed.innerHTML = `${weather_data.wind.speed}Km/H`;
 
     switch (weather_data.weather[0].main) {
-        case 'Clouds':
-            weather_img.src = "thumbnails/cloud.png";
-            break;
-        case 'Clear':
-            weather_img.src = "thumbnails/clear.png";
-            break;
-        case 'Rain':
-            weather_img.src = "thumbnails/rain.png";
-            break;
-        case 'Mist':
-            weather_img.src = "thumbnails/mist.png";
-            break;
-        case 'Snow':
-            weather_img.src = "thumbnails/snow.png";
-            break;
-    }
+    case 'Clouds':
+        weather_img.src = "../html-css/thumbnails/cloud.png";
+        break;
+    case 'Clear':
+        weather_img.src = "../html-css/thumbnails/clear.png";
+        break;
+    case 'Rain':
+        weather_img.src = "../html-css/thumbnails/rain.png";
+        break;
+    case 'Mist':
+        weather_img.src = "../html-css/thumbnails/mist.png";
+        break;
+    case 'Snow':
+        weather_img.src = "../html-css/thumbnails/snow.png";
+        break;
+    default:
+        console.log("Unknown weather type:", weather_data.weather[0].main);
+        weather_img.src = "../html-css/thumbnails/cloud.png";
+}
+
 
     console.log(weather_data);
 }
